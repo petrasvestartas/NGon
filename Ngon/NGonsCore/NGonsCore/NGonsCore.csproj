@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C60FBCA-8B8C-4D76-8E07-C75BED44B4A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGonsCore</RootNamespace>
+    <AssemblyName>NGonsCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\AppData\Roaming\Grasshopper\6\Libraries\Ngons\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\AppData\Roaming\Grasshopper\6\Libraries\Rhino6\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GH_IO">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\GH_IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Grasshopper">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\Grasshopper.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Meta.Numerics">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\Meta.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RhinoCommon">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\RhinoCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Triangle4">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\Triangle4.dll</HintPath>
+    </Reference>
+    <Reference Include="YC.QuickGraph">
+      <HintPath>..\..\..\..\..\..\OneDrive\Rhino6Old\YC.QuickGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3Sharp\approximation\BiArcFit2.cs" />
+    <Compile Include="3Sharp\approximation\GaussPointsFit3.cs" />
+    <Compile Include="3Sharp\approximation\OrthogonalPlaneFit3.cs" />
+    <Compile Include="3Sharp\approximation\QuadraticFit2.cs" />
+    <Compile Include="3Sharp\color\Colorb.cs" />
+    <Compile Include="3Sharp\color\Colorf.cs" />
+    <Compile Include="3Sharp\color\ColorHSV.cs" />
+    <Compile Include="3Sharp\color\ColorMap.cs" />
+    <Compile Include="3Sharp\color\ColorMixer.cs" />
+    <Compile Include="3Sharp\comp_geom\Arrangement2d.cs" />
+    <Compile Include="3Sharp\comp_geom\ConvexHull2.cs" />
+    <Compile Include="3Sharp\comp_geom\GraphCells2d.cs" />
+    <Compile Include="3Sharp\comp_geom\GraphSplitter2d.cs" />
+    <Compile Include="3Sharp\comp_geom\SphericalFibonacciPointSet.cs" />
+    <Compile Include="3Sharp\containment\ContBox3.cs" />
+    <Compile Include="3Sharp\containment\ContMinBox2.cs" />
+    <Compile Include="3Sharp\containment\ContMinCircle2.cs" />
+    <Compile Include="3Sharp\containment\TilingUtil.cs" />
+    <Compile Include="3Sharp\core\BufferUtil.cs" />
+    <Compile Include="3Sharp\core\CommandArgumentSet.cs" />
+    <Compile Include="3Sharp\core\DeepCopy.cs" />
+    <Compile Include="3Sharp\core\DijkstraGraphDistance.cs" />
+    <Compile Include="3Sharp\core\DVector.cs" />
+    <Compile Include="3Sharp\core\DVectorArray.cs" />
+    <Compile Include="3Sharp\core\DynamicPriorityQueue.cs" />
+    <Compile Include="3Sharp\core\FileSystemUtils.cs" />
+    <Compile Include="3Sharp\core\g3Interfaces.cs" />
+    <Compile Include="3Sharp\core\g3Iterators.cs" />
+    <Compile Include="3Sharp\core\gParallel.cs" />
+    <Compile Include="3Sharp\core\HashUtil.cs" />
+    <Compile Include="3Sharp\core\HBitArray.cs" />
+    <Compile Include="3Sharp\core\Indexing.cs" />
+    <Compile Include="3Sharp\core\IndexPriorityQueue.cs" />
+    <Compile Include="3Sharp\core\MemoryPool.cs" />
+    <Compile Include="3Sharp\core\ProfileUtil.cs" />
+    <Compile Include="3Sharp\core\ProgressCancel.cs" />
+    <Compile Include="3Sharp\core\RefCountVector.cs" />
+    <Compile Include="3Sharp\core\SafeCollections.cs" />
+    <Compile Include="3Sharp\core\SmallListSet.cs" />
+    <Compile Include="3Sharp\core\Snapping.cs" />
+    <Compile Include="3Sharp\core\SparseList.cs" />
+    <Compile Include="3Sharp\core\TagSet.cs" />
+    <Compile Include="3Sharp\core\Units.cs" />
+    <Compile Include="3Sharp\core\Util.cs" />
+    <Compile Include="3Sharp\core\VectorArray.cs" />
+    <Compile Include="3Sharp\curve\Arc2.cs" />
+    <Compile Include="3Sharp\curve\ArcLengthParam.cs" />
+    <Compile Include="3Sharp\curve\BaseCurve2.cs" />
+    <Compile Include="3Sharp\curve\BezierCurve2.cs" />
+    <Compile Include="3Sharp\curve\BSplineBasis.cs" />
+    <Compile Include="3Sharp\curve\Circle2.cs" />
+    <Compile Include="3Sharp\curve\CurveGenerators.cs" />
+    <Compile Include="3Sharp\curve\CurveResampler.cs" />
+    <Compile Include="3Sharp\curve\CurveSampler2.cs" />
+    <Compile Include="3Sharp\curve\CurveUtils.cs" />
+    <Compile Include="3Sharp\curve\CurveUtils2.cs" />
+    <Compile Include="3Sharp\curve\DCurve3.cs" />
+    <Compile Include="3Sharp\curve\DGraph.cs" />
+    <Compile Include="3Sharp\curve\DGraph2.cs" />
+    <Compile Include="3Sharp\curve\DGraph2Resampler.cs" />
+    <Compile Include="3Sharp\curve\DGraph2Util.cs" />
+    <Compile Include="3Sharp\curve\DGraph3.cs" />
+    <Compile Include="3Sharp\curve\DGraph3Util.cs" />
+    <Compile Include="3Sharp\curve\Ellipse2.cs" />
+    <Compile Include="3Sharp\curve\EllipseArc2.cs" />
+    <Compile Include="3Sharp\curve\GeneralPolygon2d.cs" />
+    <Compile Include="3Sharp\curve\Hexagon2.cs" />
+    <Compile Include="3Sharp\curve\ICurve.cs" />
+    <Compile Include="3Sharp\curve\LaplacianCurveDeformer.cs" />
+    <Compile Include="3Sharp\curve\NURBSCurve2.cs" />
+    <Compile Include="3Sharp\curve\ParametricCurveSequence2.cs" />
+    <Compile Include="3Sharp\curve\PlanarComplex.cs" />
+    <Compile Include="3Sharp\curve\PlanarSolid2d.cs" />
+    <Compile Include="3Sharp\curve\Polygon2d.cs" />
+    <Compile Include="3Sharp\curve\PolygonFont2d.cs" />
+    <Compile Include="3Sharp\curve\PolyLine2d.cs" />
+    <Compile Include="3Sharp\curve\PolyLine2f.cs" />
+    <Compile Include="3Sharp\curve\PolyLine3d.cs" />
+    <Compile Include="3Sharp\curve\PolySimplification2.cs" />
+    <Compile Include="3Sharp\curve\SculptCurveDeformers.cs" />
+    <Compile Include="3Sharp\curve\SimpleCurveDeformers.cs" />
+    <Compile Include="3Sharp\distance\Distance.cs" />
+    <Compile Include="3Sharp\distance\DistLine2Line2.cs" />
+    <Compile Include="3Sharp\distance\DistLine2Segment2.cs" />
+    <Compile Include="3Sharp\distance\DistLine3Ray3.cs" />
+    <Compile Include="3Sharp\distance\DistLine3Segment3.cs" />
+    <Compile Include="3Sharp\distance\DistLine3Triangle3.cs" />
+    <Compile Include="3Sharp\distance\DistPoint2Box2.cs" />
+    <Compile Include="3Sharp\distance\DistPoint2Circle2.cs" />
+    <Compile Include="3Sharp\distance\DistPoint3Circle3.cs" />
+    <Compile Include="3Sharp\distance\DistPoint3Cylinder3.cs" />
+    <Compile Include="3Sharp\distance\DistPoint3Triangle3.cs" />
+    <Compile Include="3Sharp\distance\DistRay3Ray3.cs" />
+    <Compile Include="3Sharp\distance\DistRay3Segment3.cs" />
+    <Compile Include="3Sharp\distance\DistSegment2Segment2.cs" />
+    <Compile Include="3Sharp\distance\DistSegment3Triangle3.cs" />
+    <Compile Include="3Sharp\distance\DistTriangle3Triangle3.cs" />
+    <Compile Include="3Sharp\implicit\GridImplicits3d.cs" />
+    <Compile Include="3Sharp\implicit\Implicit2d.cs" />
+    <Compile Include="3Sharp\implicit\Implicit3d.cs" />
+    <Compile Include="3Sharp\implicit\ImplicitFieldSampler3d.cs" />
+    <Compile Include="3Sharp\implicit\ImplicitOperators.cs" />
+    <Compile Include="3Sharp\implicit\MarchingQuads.cs" />
+    <Compile Include="3Sharp\intersection\Intersector1.cs" />
+    <Compile Include="3Sharp\intersection\IntrLine2Line2.cs" />
+    <Compile Include="3Sharp\intersection\IntrLine2Segment2.cs" />
+    <Compile Include="3Sharp\intersection\IntrLine2Triangle2.cs" />
+    <Compile Include="3Sharp\intersection\IntrLine3AxisAlignedBox3.cs" />
+    <Compile Include="3Sharp\intersection\IntrLine3Box3.cs" />
+    <Compile Include="3Sharp\intersection\IntrRay3AxisAlignedBox3.cs" />
+    <Compile Include="3Sharp\intersection\IntrRay3Box3.cs" />
+    <Compile Include="3Sharp\intersection\IntrRay3Triangle3.cs" />
+    <Compile Include="3Sharp\intersection\IntrSegment2Segment2.cs" />
+    <Compile Include="3Sharp\intersection\IntrSegment2Triangle2.cs" />
+    <Compile Include="3Sharp\intersection\IntrSegment3Box3.cs" />
+    <Compile Include="3Sharp\intersection\IntrTriangle2Triangle2.cs" />
+    <Compile Include="3Sharp\intersection\IntrTriangle3Triangle3.cs" />
+    <Compile Include="3Sharp\io\BinaryG3ReaderWriter.cs" />
+    <Compile Include="3Sharp\io\gSerialization.cs" />
+    <Compile Include="3Sharp\io\MaterialTypes.cs" />
+    <Compile Include="3Sharp\io\MeshIO.cs" />
+    <Compile Include="3Sharp\io\MeshIOUtil.cs" />
+    <Compile Include="3Sharp\io\OBJReader.cs" />
+    <Compile Include="3Sharp\io\OBJWriter.cs" />
+    <Compile Include="3Sharp\io\OFFReader.cs" />
+    <Compile Include="3Sharp\io\OFFWriter.cs" />
+    <Compile Include="3Sharp\io\StandardMeshReader.cs" />
+    <Compile Include="3Sharp\io\StandardMeshWriter.cs" />
+    <Compile Include="3Sharp\io\STLReader.cs" />
+    <Compile Include="3Sharp\io\STLWriter.cs" />
+    <Compile Include="3Sharp\io\SVGWriter.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox2d.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox2f.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox2i.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox3d.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox3f.cs" />
+    <Compile Include="3Sharp\math\AxisAlignedBox3i.cs" />
+    <Compile Include="3Sharp\math\BoundsUtil.cs" />
+    <Compile Include="3Sharp\math\Box2.cs" />
+    <Compile Include="3Sharp\math\Box3.cs" />
+    <Compile Include="3Sharp\math\FastWindingMath.cs" />
+    <Compile Include="3Sharp\math\Frame3f.cs" />
+    <Compile Include="3Sharp\math\IndexTypes.cs" />
+    <Compile Include="3Sharp\math\IndexUtil.cs" />
+    <Compile Include="3Sharp\math\Integrate1d.cs" />
+    <Compile Include="3Sharp\math\Interval1d.cs" />
+    <Compile Include="3Sharp\math\Interval1i.cs" />
+    <Compile Include="3Sharp\math\Line2.cs" />
+    <Compile Include="3Sharp\math\Line3.cs" />
+    <Compile Include="3Sharp\math\MathUtil.cs" />
+    <Compile Include="3Sharp\math\Matrix2d.cs" />
+    <Compile Include="3Sharp\math\Matrix2f.cs" />
+    <Compile Include="3Sharp\math\Matrix3d.cs" />
+    <Compile Include="3Sharp\math\Matrix3f.cs" />
+    <Compile Include="3Sharp\math\MatrixUtil.cs" />
+    <Compile Include="3Sharp\math\Plane3.cs" />
+    <Compile Include="3Sharp\math\PrimalQuery2d.cs" />
+    <Compile Include="3Sharp\math\Quaterniond.cs" />
+    <Compile Include="3Sharp\math\Quaternionf.cs" />
+    <Compile Include="3Sharp\math\Query2.cs" />
+    <Compile Include="3Sharp\math\Query2Integer.cs" />
+    <Compile Include="3Sharp\math\QueryTuple2d.cs" />
+    <Compile Include="3Sharp\math\Ray3.cs" />
+    <Compile Include="3Sharp\math\ScalarMap.cs" />
+    <Compile Include="3Sharp\math\Segment2.cs" />
+    <Compile Include="3Sharp\math\Segment3.cs" />
+    <Compile Include="3Sharp\math\TransformSequence.cs" />
+    <Compile Include="3Sharp\math\TransformSequence2.cs" />
+    <Compile Include="3Sharp\math\Triangle2.cs" />
+    <Compile Include="3Sharp\math\Triangle3.cs" />
+    <Compile Include="3Sharp\math\Vector2d.cs" />
+    <Compile Include="3Sharp\math\Vector2f.cs" />
+    <Compile Include="3Sharp\math\Vector2i.cs" />
+    <Compile Include="3Sharp\math\Vector3d.cs" />
+    <Compile Include="3Sharp\math\Vector3f.cs" />
+    <Compile Include="3Sharp\math\Vector3i.cs" />
+    <Compile Include="3Sharp\math\Vector4d.cs" />
+    <Compile Include="3Sharp\math\Vector4f.cs" />
+    <Compile Include="3Sharp\math\VectorTuple.cs" />
+    <Compile Include="3Sharp\mesh\DMesh3.cs" />
+    <Compile Include="3Sharp\mesh\DMesh3Builder.cs" />
+    <Compile Include="3Sharp\mesh\DMesh3Changes.cs" />
+    <Compile Include="3Sharp\mesh\DMesh3_debug.cs" />
+    <Compile Include="3Sharp\mesh\DMesh3_edge_operators.cs" />
+    <Compile Include="3Sharp\mesh\DSubmesh3.cs" />
+    <Compile Include="3Sharp\mesh\DSubmesh3Set.cs" />
+    <Compile Include="3Sharp\mesh\EdgeLoop.cs" />
+    <Compile Include="3Sharp\mesh\EdgeLoopRemesher.cs" />
+    <Compile Include="3Sharp\mesh\EdgeSpan.cs" />
+    <Compile Include="3Sharp\mesh\FaceGroupOptimizer.cs" />
+    <Compile Include="3Sharp\mesh\FaceGroupUtil.cs" />
+    <Compile Include="3Sharp\mesh\IMesh.cs" />
+    <Compile Include="3Sharp\mesh\MeshCaches.cs" />
+    <Compile Include="3Sharp\mesh\MeshConstraints.cs" />
+    <Compile Include="3Sharp\mesh\MeshConstraintUtil.cs" />
+    <Compile Include="3Sharp\mesh\MeshDecomposition.cs" />
+    <Compile Include="3Sharp\mesh\MeshEditor.cs" />
+    <Compile Include="3Sharp\mesh\MeshIndexUtil.cs" />
+    <Compile Include="3Sharp\mesh\MeshIterators.cs" />
+    <Compile Include="3Sharp\mesh\MeshMeasurements.cs" />
+    <Compile Include="3Sharp\mesh\MeshNormals.cs" />
+    <Compile Include="3Sharp\mesh\MeshPointSets.cs" />
+    <Compile Include="3Sharp\mesh\MeshRefinerBase.cs" />
+    <Compile Include="3Sharp\mesh\MeshTransforms.cs" />
+    <Compile Include="3Sharp\mesh\MeshUtil.cs" />
+    <Compile Include="3Sharp\mesh\MeshUVSet.cs" />
+    <Compile Include="3Sharp\mesh\MeshWeights.cs" />
+    <Compile Include="3Sharp\mesh\NTMesh3.cs" />
+    <Compile Include="3Sharp\mesh\Reducer.cs" />
+    <Compile Include="3Sharp\mesh\RegionRemesher.cs" />
+    <Compile Include="3Sharp\mesh\Remesher.cs" />
+    <Compile Include="3Sharp\mesh\SimpleMesh.cs" />
+    <Compile Include="3Sharp\mesh\SimpleQuadMesh.cs" />
+    <Compile Include="3Sharp\mesh_generators\ArrowGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\BoxGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\CylinderGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\DiscGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\GenCylGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\MarchingCubes.cs" />
+    <Compile Include="3Sharp\mesh_generators\MeshGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\PlaneGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\PointsMeshGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\RevolveGenerator.cs" />
+    <Compile Include="3Sharp\mesh_generators\SphereGenerators.cs" />
+    <Compile Include="3Sharp\mesh_generators\TriangulatedPolygonGenerator.cs" />
+    <Compile Include="3Sharp\mesh_generators\VoxelSurfaceGenerator.cs" />
+    <Compile Include="3Sharp\mesh_ops\LaplacianMeshDeformer.cs" />
+    <Compile Include="3Sharp\mesh_ops\LaplacianMeshSmoother.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshExtrudeFaces.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshExtrudeLoop.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshExtrudeMesh.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshICP.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshInsertPolygon.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshInsertUVPolyCurve.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshIsoCurves.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshIterativeSmooth.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshLocalParam.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshLoopClosure.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshLoopSmooth.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshOps.cs" />
+    <Compile Include="3Sharp\mesh_ops\MeshPlaneCut.cs" />
+    <Compile Include="3Sharp\mesh_ops\PlanarHoleFiller.cs" />
+    <Compile Include="3Sharp\mesh_ops\RegionOperator.cs" />
+    <Compile Include="3Sharp\mesh_ops\SimpleHoleFiller.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshBoundaryLoops.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshConnectedComponents.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshEdgeSelection.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshFaceSelection.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshFacesFromLoop.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshRegionBoundaryLoops.cs" />
+    <Compile Include="3Sharp\mesh_selection\MeshVertexSelection.cs" />
+    <Compile Include="3Sharp\queries\IntersectionUtil.cs" />
+    <Compile Include="3Sharp\queries\MeshQueries.cs" />
+    <Compile Include="3Sharp\queries\MeshValidation.cs" />
+    <Compile Include="3Sharp\queries\RayIntersection.cs" />
+    <Compile Include="3Sharp\shapes3\Circle3.cs" />
+    <Compile Include="3Sharp\shapes3\Cylinder3.cs" />
+    <Compile Include="3Sharp\solvers\CholeskyDecomposition.cs" />
+    <Compile Include="3Sharp\solvers\DenseMatrix.cs" />
+    <Compile Include="3Sharp\solvers\DenseVector.cs" />
+    <Compile Include="3Sharp\solvers\FastQuaternionSVD.cs" />
+    <Compile Include="3Sharp\solvers\IMatrix.cs" />
+    <Compile Include="3Sharp\solvers\PackedSparseMatrix.cs" />
+    <Compile Include="3Sharp\solvers\SingularValueDecomposition.cs" />
+    <Compile Include="3Sharp\solvers\SparseMatrix.cs" />
+    <Compile Include="3Sharp\solvers\SparseSymmetricCG.cs" />
+    <Compile Include="3Sharp\solvers\SymmetricEigenSolver.cs" />
+    <Compile Include="3Sharp\spatial\BasicIntersectionTargets.cs" />
+    <Compile Include="3Sharp\spatial\BasicProjectionTargets.cs" />
+    <Compile Include="3Sharp\spatial\BiGrid3.cs" />
+    <Compile Include="3Sharp\spatial\Bitmap2.cs" />
+    <Compile Include="3Sharp\spatial\Bitmap3.cs" />
+    <Compile Include="3Sharp\spatial\DCurveBoxTree.cs" />
+    <Compile Include="3Sharp\spatial\DCurveProjection.cs" />
+    <Compile Include="3Sharp\spatial\DenseGrid2.cs" />
+    <Compile Include="3Sharp\spatial\DenseGrid3.cs" />
+    <Compile Include="3Sharp\spatial\DMeshAABBTree.cs" />
+    <Compile Include="3Sharp\spatial\DSparseGrid3.cs" />
+    <Compile Include="3Sharp\spatial\GridIndexing.cs" />
+    <Compile Include="3Sharp\spatial\GridIndexing2.cs" />
+    <Compile Include="3Sharp\spatial\MeshSignedDistanceGrid.cs" />
+    <Compile Include="3Sharp\spatial\NormalHistogram.cs" />
+    <Compile Include="3Sharp\spatial\PointAABBTree3.cs" />
+    <Compile Include="3Sharp\spatial\PointHashGrid2d.cs" />
+    <Compile Include="3Sharp\spatial\PointHashGrid3d.cs" />
+    <Compile Include="3Sharp\spatial\Polygon2dBoxTree.cs" />
+    <Compile Include="3Sharp\spatial\SegmentHashGrid.cs" />
+    <Compile Include="3Sharp\spatial\SegmentSet2d.cs" />
+    <Compile Include="3Sharp\spatial\SpatialFunctions.cs" />
+    <Compile Include="3Sharp\spatial\SpatialInterfaces.cs" />
+    <Compile Include="3Sharp\spatial\TriangleBinsGrid2d.cs" />
+    <Compile Include="Algo\Binary\BaseConversion.cs" />
+    <Compile Include="Algo\Binary\GCD.cs" />
+    <Compile Include="Algo\Binary\Logarithm.cs" />
+    <Compile Include="Algo\Combinatorics\Combination.cs" />
+    <Compile Include="Algo\Combinatorics\Permutation.cs" />
+    <Compile Include="Algo\Combinatorics\Subset.cs" />
+    <Compile Include="Algo\Compression\HuffmanCoding.cs" />
+    <Compile Include="Algo\DataStructures\Dictionary\Dictionary.cs" />
+    <Compile Include="Algo\DataStructures\Dictionary\OpenAddressDictionary.cs" />
+    <Compile Include="Algo\DataStructures\Dictionary\OrderedDictionary.cs" />
+    <Compile Include="Algo\DataStructures\Dictionary\SeparateChainingDictionary.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyList\DiGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyList\Graph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyList\WeightedDiGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyList\WeightedGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyMatrix\DiGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyMatrix\Graph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyMatrix\WeightedDiGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\AdjacencyMatrix\WeightedGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\IDiGraph.cs" />
+    <Compile Include="Algo\DataStructures\Graph\IGraph.cs" />
+    <Compile Include="Algo\DataStructures\HashSet\HashSet.cs" />
+    <Compile Include="Algo\DataStructures\HashSet\OpenAddressHashSet.cs" />
+    <Compile Include="Algo\DataStructures\HashSet\OrderedHashSet.cs" />
+    <Compile Include="Algo\DataStructures\HashSet\SeparateChainingHashSet.cs" />
+    <Compile Include="Algo\DataStructures\Heap\BHeap.cs" />
+    <Compile Include="Algo\DataStructures\Heap\BinomialHeap.cs" />
+    <Compile Include="Algo\DataStructures\Heap\d-aryHeap.cs" />
+    <Compile Include="Algo\DataStructures\Heap\FibonacciHeap.cs" />
+    <Compile Include="Algo\DataStructures\Heap\PairingHeap.cs" />
+    <Compile Include="Algo\DataStructures\Heap\Shared\BinomialHeapNode.cs" />
+    <Compile Include="Algo\DataStructures\Heap\Shared\FibornacciHeapNode.cs" />
+    <Compile Include="Algo\DataStructures\Heap\Shared\PairingHeapNode.cs" />
+    <Compile Include="Algo\DataStructures\LinkedList\CircularLinkedList.cs" />
+    <Compile Include="Algo\DataStructures\LinkedList\DoublyLinkedList.cs" />
+    <Compile Include="Algo\DataStructures\LinkedList\SinglyLinkedList.cs" />
+    <Compile Include="Algo\DataStructures\List\ArrayList.cs" />
+    <Compile Include="Algo\DataStructures\List\SkipList.cs" />
+    <Compile Include="Algo\DataStructures\Queues\ArrayQueue.cs" />
+    <Compile Include="Algo\DataStructures\Queues\LinkedListQueue.cs" />
+    <Compile Include="Algo\DataStructures\Queues\PriorityQueue.cs" />
+    <Compile Include="Algo\DataStructures\Queues\Queue.cs" />
+    <Compile Include="Algo\DataStructures\Set\BloomFilter.cs" />
+    <Compile Include="Algo\DataStructures\Set\DisJointSet.cs" />
+    <Compile Include="Algo\DataStructures\Set\SparseSet.cs" />
+    <Compile Include="Algo\DataStructures\Shared\IEnumerableExtensions.cs" />
+    <Compile Include="Algo\DataStructures\Stack\ArrayStack.cs" />
+    <Compile Include="Algo\DataStructures\Stack\LinkedListStack.cs" />
+    <Compile Include="Algo\DataStructures\Stack\Stack.cs" />
+    <Compile Include="Algo\DataStructures\Tree\AvlTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\B+Tree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\BinaryTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\BST.cs" />
+    <Compile Include="Algo\DataStructures\Tree\BTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\FenwickTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\IntervalTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\K_DTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\QuadTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\RangeTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\RedBlackTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\RTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\SegmentTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Shared\ArrayComparer.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Shared\BSTEnumerator.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Shared\BSTExtensions.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Shared\BSTHelpers.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Shared\BSTNodeBase.cs" />
+    <Compile Include="Algo\DataStructures\Tree\SplayTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\SuffixTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\TernarySearchTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\TreapTree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Tree.cs" />
+    <Compile Include="Algo\DataStructures\Tree\Trie.cs" />
+    <Compile Include="Algo\Distributed\AsyncQueue.cs" />
+    <Compile Include="Algo\Distributed\CircularQueue.cs" />
+    <Compile Include="Algo\Distributed\ConsistentHash.cs" />
+    <Compile Include="Algo\Distributed\LRUCache.cs" />
+    <Compile Include="Algo\Geometry\BentleyOttmann.cs" />
+    <Compile Include="Algo\Geometry\ClosestPointPair.cs" />
+    <Compile Include="Algo\Geometry\ConvexHull.cs" />
+    <Compile Include="Algo\Geometry\LineIntersection.cs" />
+    <Compile Include="Algo\Geometry\PointInsidePolygon.cs" />
+    <Compile Include="Algo\Geometry\PointRotation.cs" />
+    <Compile Include="Algo\Geometry\RectangleIntersection.cs" />
+    <Compile Include="Algo\Geometry\Shapes\Line.cs" />
+    <Compile Include="Algo\Geometry\Shapes\Point.cs" />
+    <Compile Include="Algo\Geometry\Shapes\Polygon.cs" />
+    <Compile Include="Algo\Geometry\Shapes\Rectangle.cs" />
+    <Compile Include="Algo\Geometry\Shared\DoubleExtensions.cs" />
+    <Compile Include="Algo\Geometry\Shared\PointComparer.cs" />
+    <Compile Include="Algo\Geometry\Shared\RectangleComparer.cs" />
+    <Compile Include="Algo\Graph\ArticulationPoint\TarjansArticulationFinder.cs" />
+    <Compile Include="Algo\Graph\Bridge\TarjansBridgeFinder.cs" />
+    <Compile Include="Algo\Graph\Coloring\MColorer.cs" />
+    <Compile Include="Algo\Graph\Connectivity\KosarajuStronglyConnected.cs" />
+    <Compile Include="Algo\Graph\Connectivity\TarjansBiConnected.cs" />
+    <Compile Include="Algo\Graph\Connectivity\TarjansStronglyConnected.cs" />
+    <Compile Include="Algo\Graph\Cover\MinVertexCover.cs" />
+    <Compile Include="Algo\Graph\Cut\MinimumCut.cs" />
+    <Compile Include="Algo\Graph\Cycle\CycleDetection.cs" />
+    <Compile Include="Algo\Graph\Flow\EdmondsKarp.cs" />
+    <Compile Include="Algo\Graph\Flow\FordFulkerson.cs" />
+    <Compile Include="Algo\Graph\Flow\PushRelabel.cs" />
+    <Compile Include="Algo\Graph\Matching\BiPartiteMatching.cs" />
+    <Compile Include="Algo\Graph\Matching\HopcroftKarp.cs" />
+    <Compile Include="Algo\Graph\MinimumSpanningTree\Kruskals.cs" />
+    <Compile Include="Algo\Graph\MinimumSpanningTree\Prims.cs" />
+    <Compile Include="Algo\Graph\Search\BiDirectional.cs" />
+    <Compile Include="Algo\Graph\Search\BreadthFirst.cs" />
+    <Compile Include="Algo\Graph\Search\DepthFirst.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\AStar.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\Bellman-Ford.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\Dijikstra.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\Floyd-Warshall.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\Johnsons.cs" />
+    <Compile Include="Algo\Graph\ShortestPath\TravellingSalesman.cs" />
+    <Compile Include="Algo\Graph\Sort\DepthFirstTopSort.cs" />
+    <Compile Include="Algo\Graph\Sort\KahnTopSort.cs" />
+    <Compile Include="Algo\Numerical\Exponentiation.cs" />
+    <Compile Include="Algo\Numerical\PrimeGenerator.cs" />
+    <Compile Include="Algo\Numerical\PrimeTester.cs" />
+    <Compile Include="Algo\RhinoGraph.cs" />
+    <Compile Include="Algo\Search\BinarySearch.cs" />
+    <Compile Include="Algo\Search\BoyerMoore.cs" />
+    <Compile Include="Algo\Search\QuickSelect.cs" />
+    <Compile Include="Algo\Shared\CustomComparer.cs" />
+    <Compile Include="Algo\Shared\SortDirection.cs" />
+    <Compile Include="Algo\Sorting\BubbleSort.cs" />
+    <Compile Include="Algo\Sorting\BucketSort.cs" />
+    <Compile Include="Algo\Sorting\CountingSort.cs" />
+    <Compile Include="Algo\Sorting\HeapSort.cs" />
+    <Compile Include="Algo\Sorting\InsertionSort.cs" />
+    <Compile Include="Algo\Sorting\MergeSort.cs" />
+    <Compile Include="Algo\Sorting\QuickSort.cs" />
+    <Compile Include="Algo\Sorting\RadixSort.cs" />
+    <Compile Include="Algo\Sorting\SelectionSort.cs" />
+    <Compile Include="Algo\Sorting\ShellSort.cs" />
+    <Compile Include="Algo\Sorting\TreeSort.cs" />
+    <Compile Include="Algo\String\ManachersPalindrome.cs" />
+    <Compile Include="Algo\String\Search\KMP.cs" />
+    <Compile Include="Algo\String\Search\RabinKarp.cs" />
+    <Compile Include="Algo\String\Search\ZAlgorithm.cs" />
+    <Compile Include="Analysis.cs" />
+    <Compile Include="BakeUtil.cs" />
+    <Compile Include="BoundingBoxUtil.cs" />
+    <Compile Include="CircleUtil.cs" />
+    <Compile Include="Clipper\clipper.cs" />
+    <Compile Include="Clipper\Clipper642.cs" />
+    <Compile Include="Clipper\DataAccessHelper.cs" />
+    <Compile Include="Clipper\Geometry.cs" />
+    <Compile Include="ColorUtil.cs" />
+    <Compile Include="ConvexHull\Constants.cs" />
+    <Compile Include="ConvexHull\ConvexHull.cs" />
+    <Compile Include="ConvexHull\ConvexHull\Collections.cs" />
+    <Compile Include="ConvexHull\ConvexHull\ConvexFace.cs" />
+    <Compile Include="ConvexHull\ConvexHull\ConvexHullAlgorithm.Initialize.cs" />
+    <Compile Include="ConvexHull\ConvexHull\ConvexHullAlgorithm.MainLoop.cs" />
+    <Compile Include="ConvexHull\ConvexHull\DataModel.cs" />
+    <Compile Include="ConvexHull\ConvexHull\MathHelper.cs" />
+    <Compile Include="ConvexHull\ConvexHull\ObjectManager.cs" />
+    <Compile Include="ConvexHull\IVertex.cs" />
+    <Compile Include="ConvexHull\Triangulation.cs" />
+    <Compile Include="ConvexHull\Triangulation\DelaunayTrianglationInternal.cs" />
+    <Compile Include="ConvexHull\Triangulation\DelaunayTriangulation.cs" />
+    <Compile Include="ConvexHull\Triangulation\TriangulationCell.cs" />
+    <Compile Include="ConvexHull\Triangulation\VoronoiEdge.cs" />
+    <Compile Include="ConvexHull\Triangulation\VoronoiMesh.cs" />
+    <Compile Include="CP.cs" />
+    <Compile Include="CustomMeshUtil.cs" />
+    <Compile Include="Elements\Elements.cs" />
+    <Compile Include="Fabircation.cs" />
+    <Compile Include="Graphs\DirectedNode.cs" />
+    <Compile Include="Graphs\DuplicateRemover.cs" />
+    <Compile Include="Graphs\GraphBuilder.cs" />
+    <Compile Include="Graphs\GraphEdge.cs" />
+    <Compile Include="Graphs\MeshBuilder.cs" />
+    <Compile Include="Graphs\MyGraph\UndirectedGraphBFS.cs" />
+    <Compile Include="Graphs\MyGraph\UndirectedWeightedGraph.cs" />
+    <Compile Include="Graphs\SimpleGraph.cs" />
+    <Compile Include="Graphs\MyGraph\Edge.cs" />
+    <Compile Include="Graphs\MyGraph\LineGraph.cs" />
+    <Compile Include="Graphs\MyGraph\UndirectedGraph.cs" />
+    <Compile Include="Graphs\MyGraph\Vertex.cs" />
+    <Compile Include="GrasshopperUtil.cs" />
+    <Compile Include="InterpolateUtil.cs" />
+    <Compile Include="IsoSurface\Voxel\Vector.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelBox.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelCube.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelEdge.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelEdgePoint.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelFacet.cs" />
+    <Compile Include="IsoSurface\Voxel\VoxelVertex.cs" />
+    <Compile Include="Joinery.cs" />
+    <Compile Include="LineUtil.cs" />
+    <Compile Include="Mapping.cs" />
+    <Compile Include="MathUtil.cs" />
+    <Compile Include="MeshCreate.cs" />
+    <Compile Include="MeshDual.cs" />
+    <Compile Include="MeshOffset.cs" />
+    <Compile Include="MeshSkeleton.cs" />
+    <Compile Include="MeshUtilSimple.cs" />
+    <Compile Include="Nexorades\Nexor.cs" />
+    <Compile Include="Nexorades\Nexors.cs" />
+    <Compile Include="NGonGeometryUtil.cs" />
+    <Compile Include="NGonUtil.cs" />
+    <Compile Include="ObjParser\Extent.cs" />
+    <Compile Include="ObjParser\Mtl.cs" />
+    <Compile Include="ObjParser\Obj.cs" />
+    <Compile Include="ObjParser\Properties\AssemblyInfo.cs" />
+    <Compile Include="ObjParser\Types\Color.cs" />
+    <Compile Include="ObjParser\Types\Face.cs" />
+    <Compile Include="ObjParser\Types\IType.cs" />
+    <Compile Include="ObjParser\Types\Material.cs" />
+    <Compile Include="ObjParser\Types\TextureVertex.cs" />
+    <Compile Include="ObjParser\Types\Vertex.cs" />
+    <Compile Include="Pattern\Tile2D.cs" />
+    <Compile Include="Planarize.cs" />
+    <Compile Include="MeshUtil.cs" />
+    <Compile Include="Planarize\PlanarizeNeighbourFaces.cs" />
+    <Compile Include="PlaneUtil.cs" />
+    <Compile Include="Platonics\Platonics.cs" />
+    <Compile Include="PointUtil.cs" />
+    <Compile Include="PolylineUtil.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuickGraphRhino\MinimumSpanningTree\MinimumSpanningTreeRhino.cs" />
+    <Compile Include="SpecificGeometry\Reciprocal.cs" />
+    <Compile Include="SurfaceUtil.cs" />
+    <Compile Include="Text\Util\BBPolyline.cs" />
+    <Compile Include="Text\Util\Clipper.cs" />
+    <Compile Include="Text\Util\ToRhino.cs" />
+    <Compile Include="Text\Words\Font.cs" />
+    <Compile Include="Text\Words\Letter.cs" />
+    <Compile Include="Text\Words\TypeWriter.cs" />
+    <Compile Include="TriangularMeshUtil.cs" />
+    <Compile Include="Unrolling.cs" />
+    <Compile Include="VectorUtil.cs" />
+    <Compile Include="VolumeMesh\PlaneMeshList.cs" />
+    <Compile Include="VolumeMesh\PlaneMesh.cs" />
+    <Compile Include="VolumeMesh\VolumeMesh.cs" />
+    <Compile Include="Voxel\VoxelAddress.cs" />
+    <Compile Include="Voxel\VoxelSpace.cs" />
+    <Compile Include="CurveUtil.cs" />
+    <Compile Include="BrepUtil.cs" />
+    <Compile Include="Walker\MeshBurner.cs" />
+    <Compile Include="Pipe\Pipe.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\bold.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regular.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="3Sharp\interfaces\" />
+    <Folder Include="3Sharp\obj\Debug\TempPE\" />
+    <Folder Include="ObjParser\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3Sharp\obj\Debug\geometry3.dll" />
+    <Content Include="3Sharp\obj\Debug\geometry3.pdb" />
+    <Content Include="3Sharp\obj\Debug\geometry3Sharp.csproj.FileListAbsolute.txt" />
+    <Content Include="ObjParser\obj\Debug\ObjParser.csproj.FileListAbsolute.txt" />
+    <Content Include="ObjParser\obj\Debug\ObjParser.dll" />
+    <Content Include="ObjParser\obj\Debug\ObjParser.pdb" />
+    <None Include="Resources\regularCurves.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
