@@ -5,9 +5,13 @@ https://www.food4rhino.com/app/ngon
 
 Requirements:
 1. Rhino 6
-2. Additional Libraries Rhino6Old.zip
+2. Additional Libraries are zipped Rhino6Old.zip
+
+
+
 
 Contact information:
 petrasvestartas@gmail.com
+
 Web:
 www.petrasvestartas.com
