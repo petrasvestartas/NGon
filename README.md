@@ -1,6 +1,7 @@
 # NGon
+Built version and examples files are placed inside Ngons2.2.zip.
 
-The compiled version can be downloaded from
+The most recent can be downloaded from
 https://www.food4rhino.com/app/ngon
 
 Requirements:
