@@ -7,6 +7,8 @@ Requirements:
 1. Rhino 6
 2. Additional Libraries Rhino6Old.zip
 
-Contact information
+Contact information:
 petrasvestartas@gmail.com
+
+Web:
 www.petrasvestartas.com
