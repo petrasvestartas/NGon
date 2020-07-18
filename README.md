@@ -1,5 +1,5 @@
 # NGon
-Built version and examples files are placed inside Ngons2.2.zip.
+Built version is placed inside Ngons2.2.zip.
 
 The most recent can be downloaded from
 https://www.food4rhino.com/app/ngon
