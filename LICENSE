@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Petras Vestartas
+Copyright (c) 2021 Petras Vestartas, Aryan Rezaei Rad
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -12,6 +12,15 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+The COMPAS_FEA Package (Copyright (c) 2017 compas-dev) used for the structural engineering design is an extension of COMPAS [1], A framework for computational research in architecture and structures is developed by the Block Research Group of ETH Zurich, with the support of the National Centre for Competence in Research (NCCR) in Digital Fabrication.   
+
+[1] @misc{compas-dev,
+title = {{compas}: A framework for computational research in architecture and structures.},
+author = {Tom Van Mele and Andrew Liew and Tomas Mendéz Echenagucia and Matthias Rippmann and others},
+note = {http://compas-dev.github.io/compas/},
+year = {2017},
+}
+ 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
