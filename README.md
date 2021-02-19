@@ -16,3 +16,5 @@ petrasvestartas@gmail.com
 
 Web:
 www.petrasvestartas.com
+
+MIT License
