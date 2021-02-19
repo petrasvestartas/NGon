@@ -18,3 +18,12 @@ Web:
 www.petrasvestartas.com
 
 MIT License
+
+@misc{NGon,
+title = {{NGon}: Tool for mesh processing and engineering design},
+author = {Petras vestartas, Aryan Rezaei Rad},
+url = {https://github.com/petrasvestartas/NGon},
+keywords = {Nexorades},
+doi = {10.5281/zenodo.4550592},
+year = {2021},
+}
