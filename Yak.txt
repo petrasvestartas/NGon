@@ -1,0 +1,26 @@
+2.3.1
+
+cd C:\Users\petra\AppData\Roaming\Grasshopper\7\Libraries\ngon
+"C:\Program Files\Rhino 7\System\Yak.exe" spec
+"C:\Program Files\Rhino 8\System\Yak.exe" build
+change file
+"C:\Program Files\Rhino 7\System\Yak.exe" login
+"C:\Program Files\Rhino 7\System\Yak.exe" push ngon-3.2.0-rh6_19-any.yak
+"C:\Program Files\Rhino 7\System\Yak.exe" search --all --prerelease ngon-2.3.1
+"C:\Program Files\Rhino 7\System\Yak.exe" push cockroach-0.0.1.yak
+"C:\Program Files\Rhino 7\System\Yak.exe" search --all --prerelease cockroach-0.0.1
+
+"C:\Program Files\Rhino 7\System\Yak.exe" push cockroach-0.0.1.yak
+"C:\Program Files\Rhino 7\System\Yak.exe" search --all --prerelease cockroach-0.0.1
+
+---
+name: ngon
+version: 2.3.1
+authors:
+- Petras Vestartas
+description: Polygonal Mesh Processing
+url: www.petrasvestartas.com
+secret:
+  id: 20563e24-568f-4f4f-b61b-71a1781ef92f
+
+

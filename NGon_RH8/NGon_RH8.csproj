@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <!-- Select the framework(s) you wish to target.
+        Rhino 6: net45
+        Rhino 7: net48
+        Rhino 8 Windows: net48, net7.0, net7.0-windows, net7.0-windows10.0.22000.0, etc
+        Rhino 8 Mac: net7.0, net7.0-macos, net7.0-macos12.0, etc
+    -->
+    <TargetFrameworks>net7.0;</TargetFrameworks>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <TargetExt>.gha</TargetExt>
+    <NoWarn>NU1701;NETSDK1086</NoWarn>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- Specifies information for Assembly and Yak -->
+    <Version>1.0</Version>
+    <Title>NGon_RH8</Title>
+    <Company>NGon_RH8 Authors</Company>
+    <Description>Description of NGon_RH8</Description>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <BaseOutputPath>C:\Users\petras\AppData\Roaming\Grasshopper\Libraries\ngon</BaseOutputPath>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="8.0.23304.9001" ExcludeAssets="runtime" />
+    <PackageReference Include="System.Resources.Extensions" Version="9.0.0" />
+  </ItemGroup>
+  
+  <!-- For Windows only builds -->
+  <PropertyGroup Condition="$(TargetFramework.Contains('-windows')) or $(TargetFramework.StartsWith('net4'))">
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <!-- Reference WinForms for .NET 7.0 on macOS -->
+  <ItemGroup Condition="!($(TargetFramework.Contains('-windows')) or $(TargetFramework.StartsWith('net4')))">
+    <!-- Rhino 8.11 and later you can use this -->
+    <!-- <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" /> -->
+    
+    <!-- Rhino 8.10 and earlier -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" ExcludeAssets="all" GeneratePathProperty="true" />
+    <Reference Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net48)\build\.NETFramework\v4.8\System.Windows.Forms.dll" Private="False" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGonCore\NGonCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Accord">
+      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core">
+      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Meta.Numerics">
+      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Meta.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Triangle">
+      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Triangle4.dll</HintPath>
+    </Reference>
+    <Reference Include="YC.QuickGraph">
+      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\YC.QuickGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="BuildYakPackage" AfterTargets="DispatchToInnerBuilds">
+    <PropertyGroup>
+      <YakExecutable Condition="$(YakExecutable) == '' and $([MSBuild]::IsOSPlatform(windows)) and Exists('C:\Program Files\Rhino 8\System\Yak.exe')">C:\Program Files\Rhino 8\System\Yak.exe</YakExecutable>
+      <YakExecutable Condition="$(YakExecutable) == '' and $([MSBuild]::IsOSPlatform(macos)) and Exists('/Applications/Rhino 8.app/Contents/Resources/bin/yak')">/Applications/Rhino 8.app/Contents/Resources/bin/yak</YakExecutable>
+      
+      <BuildYakPackage Condition="$(BuildYakPackage) == '' and $(YakExecutable) != '' and Exists($(YakExecutable))">True</BuildYakPackage>
+    </PropertyGroup>
+    
+    <Warning Text="Could not find Yak executable" Condition="$(YakExecutable) == ''" />
+
+    <ItemGroup>
+      <YakPackagesToDelete Include="$(OutputPath)\*.yak;$(OutputPath)\**\manifest.yml" />
+    </ItemGroup>
+    
+    <Delete Files="@(YakPackagesToDelete)" />
+
+    <Exec Command="&quot;$(YakExecutable)&quot; spec" WorkingDirectory="$(OutputPath)" Condition="$(BuildYakPackage) == 'True'" />
+    <Exec Command="&quot;$(YakExecutable)&quot; build" WorkingDirectory="$(OutputPath)" Condition="$(BuildYakPackage) == 'True'" />
+
+  </Target>
+
+</Project>
