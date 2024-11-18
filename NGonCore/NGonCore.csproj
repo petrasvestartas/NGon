@@ -8,37 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="GH_IO">
-      <HintPath>..\..\..\Users\petras\.nuget\packages\grasshopper\8.0.23304.9001\lib\net48\GH_IO.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Grasshopper">
-      <HintPath>..\..\..\Users\petras\.nuget\packages\grasshopper\8.0.23304.9001\lib\net48\Grasshopper.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MathNet.Numerics">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\MathNet.Numerics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Meta.Numerics">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Meta.Numerics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RhinoCommon">
-      <HintPath>..\..\..\Users\petras\.nuget\packages\rhinocommon\8.0.23304.9001\lib\net48\RhinoCommon.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Triangle">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Triangle4.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="YC.QuickGraph">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\YC.QuickGraph.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -56,6 +25,36 @@
   <ItemGroup>
     <Folder Include="3Sharp\interfaces\" />
     <Folder Include="3Sharp\obj\Debug\TempPE\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GH_IO">
+      <HintPath>..\..\..\..\Users\petras\.nuget\packages\grasshopper\8.0.23304.9001\lib\net48\GH_IO.dll</HintPath>
+      <EmbedInteropTypes></EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grasshopper">
+      <HintPath>..\..\..\..\Users\petras\.nuget\packages\grasshopper\8.0.23304.9001\lib\net48\Grasshopper.dll</HintPath>
+      <EmbedInteropTypes></EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\Dependencies\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Meta.Numerics">
+      <HintPath>..\Dependencies\Meta.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="RhinoCommon">
+      <HintPath>..\..\..\..\Users\petras\.nuget\packages\rhinocommon\8.0.23304.9001\lib\net48\RhinoCommon.dll</HintPath>
+      <EmbedInteropTypes></EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Triangle">
+      <HintPath>..\Dependencies\Triangle4.dll</HintPath>
+    </Reference>
+    <Reference Include="YC.QuickGraph">
+      <HintPath>..\Dependencies\YC.QuickGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

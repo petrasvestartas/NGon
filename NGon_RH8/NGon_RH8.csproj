@@ -41,7 +41,7 @@
     
     <!-- Rhino 8.10 and earlier -->
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" ExcludeAssets="all" GeneratePathProperty="true" />
-    <Reference Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net48)\build\.NETFramework\v4.8\System.Windows.Forms.dll" Private="False" />
+    <Reference Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net48)\build\.NETFramework\v4.8\System.Windows.Forms.dll" Private="True" />
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="runtime" />
   </ItemGroup>
   <ItemGroup>
@@ -49,31 +49,44 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Accord">
-      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.dll</HintPath>
+      <HintPath>..\Dependencies\Accord.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Accord.MachineLearning">
-      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.MachineLearning.dll</HintPath>
+      <HintPath>..\Dependencies\Accord.MachineLearning.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Accord.Math">
-      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Math.dll</HintPath>
+      <HintPath>..\Dependencies\Accord.Math.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Accord.Math.Core">
-      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Math.Core.dll</HintPath>
+      <HintPath>..\Dependencies\Accord.Math.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Accord.Statistics">
-      <HintPath>..\..\..\Users\petras\AppData\Roaming\McNeel\Rhinoceros\packages\7.0\NGon\3.2.0\Accord.Statistics.dll</HintPath>
+      <HintPath>..\Dependencies\Accord.Statistics.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MathNet.Numerics">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\MathNet.Numerics.dll</HintPath>
+      <HintPath>..\Dependencies\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Meta.Numerics">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Meta.Numerics.dll</HintPath>
+      <HintPath>..\Dependencies\Meta.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RhinoCommon">
+      <HintPath>..\..\..\..\Users\petras\.nuget\packages\rhinocommon\8.0.23304.9001\lib\net48\RhinoCommon.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Triangle">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\Triangle4.dll</HintPath>
+      <HintPath>..\Dependencies\Triangle4.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="YC.QuickGraph">
-      <HintPath>..\NGon\AppData\Roaming\Grasshopper\6\Libraries\Ngons\YC.QuickGraph.dll</HintPath>
+      <HintPath>..\Dependencies\YC.QuickGraph.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
